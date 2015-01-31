@@ -9,8 +9,12 @@ kelsey.hightower@coreos.com
 
 * CoreOS, Inc
 
+CoreOS enables warehouse-scale computing on top of a minimal, modern operating system.
+
+.link https://coreos.com https://coreos.com
+
 - 10 Full time developers
-- Brining distributed computing to the masses
+- Bringing distributed computing to the masses
 - We build the hard stuff so you don't have too
 
 * How we write Go code
