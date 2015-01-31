@@ -51,7 +51,8 @@ Many more projects at https://github.com/coreos
 
 A highly-available key value store for shared configuration and service discovery.
 
-- k/v store
+.link https://github.com/coreos/etcd https://github.com/coreos/etcd
+
 
 Key dependencies
 
@@ -61,12 +62,13 @@ Key dependencies
       "github.com/coreos/etcd/raft"
   )
 
+* etcd in action
+
 * fleet
 
 Combines systemd and etcd into a distributed init system.
 
-- Simple scheduler
-- Machine database
+.link https://github.com/coreos/fleet https://github.com/coreos/fleet
 
 Key dependencies
 
@@ -78,12 +80,13 @@ Key dependencies
       "google.golang.org/api/googleapi"
   )
 
+* fleet in action
+
 * flannel
 
 etcd backed network fabric for containers
 
-- ipv4 subnet management
-- Overlay network (vxlan, udp)
+.link https://github.com/coreos/flannel https://github.com/coreos/flannel
 
 Key dependencies
 
@@ -92,12 +95,13 @@ Key dependencies
      "github.com/coreos/go-systemd"
  )
 
+* flannel in action
+
 * rocket
 
 Application Container runtime
 
-- Implementation of the App C spec
-- Container runtime engine
+.link https://github.com/coreos/rocket https://github.com/coreos/rocket
 
 Key dependencies:
 
@@ -105,6 +109,8 @@ Key dependencies:
       "golang.org/x/crypto/openpgp"
       "github.com/peterbourgon/diskv"
   )
+
+* rocket in action
 
 * Developer backgrounds
 
