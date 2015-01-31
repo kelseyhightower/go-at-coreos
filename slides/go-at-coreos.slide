@@ -113,6 +113,8 @@ Key dependencies:
 
   import (
       "golang.org/x/crypto/openpgp"
+      "github.com/appc/spec/discovery"
+      "github.com/appc/spec/schema"
       "github.com/peterbourgon/diskv"
   )
 
