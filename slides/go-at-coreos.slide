@@ -1,0 +1,134 @@
+Go at CoreOS
+FOSDEM 2015
+Tags: go, coreos
+
+Kelsey Hightower
+CoreOS
+kelsey.hightower@coreos.com
+@kelseyhightower
+
+* CoreOS, Inc
+
+- 10 Full time developers
+- Brining distributed computing to the masses
+- We build the hard stuff so you don't have too
+
+* How we write Go code
+
+- Mostly standard library
+- Travis CI and the testing package
+- Git (GitHub)
+
+* How we write Go code
+
+Statically linked binaries
+
+  CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w' .
+
+Build and test scripts, but the go tool still works
+
+  go build
+  go test
+  go get github.com/coreos/etcd
+
+Vendor all external dependencies with Godep (rewrite import paths)
+
+  godep save -r
+
+* Projects Using Go
+
+- etcd
+- fleet
+- flannel
+- rocket
+- locksmith
+- cloud-init
+- go-systemd
+
+Many more projects at https://github.com/coreos
+
+* etcd
+
+A highly-available key value store for shared configuration and service discovery.
+
+- k/v store
+
+Key dependencies
+
+  import (
+      "code.google.com/p/gogoprotobuf/proto"
+      "golang.org/x/net/context"
+      "github.com/coreos/etcd/raft"
+  )
+
+* fleet
+
+Combines systemd and etcd into a distributed init system.
+
+- Simple scheduler
+- Machine database
+
+Key dependencies
+
+  import (
+      "github.com/coreos/go-systemd"
+      "github.com/rakyll/globalconf"
+      "github.com/rakyll/goini"
+      "golang.org/x/crypto/ssh"
+      "google.golang.org/api/googleapi"
+  )
+
+* flannel
+
+etcd backed network fabric for containers
+
+- ipv4 subnet management
+- Overlay network (vxlan, udp)
+
+Key dependencies
+
+ import (
+     "github.com/vishvananda/netlink"
+     "github.com/coreos/go-systemd"
+ )
+
+* rocket
+
+Application Container runtime
+
+- Implementation of the App C spec
+- Container runtime engine
+
+Key dependencies:
+
+  import (
+      "golang.org/x/crypto/openpgp"
+      "github.com/peterbourgon/diskv"
+  )
+
+* Developer backgrounds
+
+You won't see methods named Factory*, but you might see bit masks for function arguments.
+
+- Kernel hackers
+- Backend developers
+- Strong C, C++, Python backgrounds
+
+* What our Developers think about Go
+
+The bike shed should be painted with all the colors
+
+- Godep is awesome
+- Godep sucks
+- In ${other_language} I could just ...
+
+* Challenges with Go
+
+- Packaging for distributions 
+- New language for many developers can be hard on contributors
+
+* CoreOS Loves Go
+
+- Go is the perfect language for the things we are building
+- After 2 years no regret going all in on Go 
+- Easy to on board new developers.
